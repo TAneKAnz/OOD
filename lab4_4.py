@@ -32,8 +32,7 @@ def check(id) :
     for x in n :
         if id == x[1] :
             return x[0]
-        
-        
+
 def search(dept) :
     for x in range(len(q.items)-1, -1, -1) :
         if dept == check(q.items[x]) :
