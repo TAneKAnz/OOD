@@ -4,19 +4,18 @@ def dec2bin(n):
     else:
         return dec2bin(n//2) + str(n%2)
 
-def o2n(n, i, t):
-    if n > t and n != 1 :
-        if n == 0 :
-            print("Only Positive & Zero Number ! ! !")
-    elif t == 0 :
-        print(0)
-    else :
+def o2n(n, i):
+    if n > 0 :
+        o2n(n-1, i)
         print(str(int(dec2bin(n))).zfill(i))
-        o2n(n+1, i, t)
+    elif n == 0 :
+        print(str(int(dec2bin(n))).zfill(i))
+    else :
+        print("Only Positive & Zero Number ! ! !")
 
 i = int(input("Enter Number : "))
 if i <= 1 :
-    t = i
+    n = i
 else :
-    t = i*i-1
-o2n(0, i, t)
+    n = (2**i)-1
+o2n(n, i)
