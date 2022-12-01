@@ -1,1 +1,1 @@
-print(bit)
+b
